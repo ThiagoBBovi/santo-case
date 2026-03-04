@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://santocase.com.br/sitemap.xml

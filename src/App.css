@@ -157,6 +157,7 @@
 
 .carousel {
   margin-top: 1.8rem;
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 1rem;
@@ -194,6 +195,10 @@
   padding: 1.3rem;
 }
 
+.product-content {
+  display: block;
+}
+
 .product-tag {
   display: inline-flex;
   background: #15366c;
@@ -215,14 +220,18 @@
 
 .product-placeholder {
   margin-top: 1rem;
-  min-height: 180px;
+  aspect-ratio: 16 / 9;
   border-radius: 0.8rem;
   border: 1px dashed #35558e;
   background: #0a1427;
-  color: #98afd3;
-  display: grid;
-  place-items: center;
-  font-weight: 600;
+  overflow: hidden;
+}
+
+.product-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .carousel-dots {
@@ -461,18 +470,54 @@
   }
 
   .carousel {
-    grid-template-columns: 1.9rem 1fr 1.9rem;
-    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card card"
+      "prev next";
+    gap: 0.6rem;
+  }
+
+  .product-card {
+    grid-area: card;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .product-content {
+    padding: 0.95rem 0.95rem 0;
+  }
+
+  .product-placeholder {
+    margin-top: 0.85rem;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    aspect-ratio: 16 / 9;
   }
 
   .carousel-control {
-    width: 1.9rem;
-    height: 1.9rem;
+    position: static;
+    transform: none;
+    width: 2.15rem;
+    height: 2.15rem;
     border-radius: 999px;
+    z-index: auto;
+    background: #0e1930;
+  }
+
+  .carousel-control--prev {
+    grid-area: prev;
+    justify-self: start;
+  }
+
+  .carousel-control--next {
+    grid-area: next;
+    justify-self: end;
   }
 
   .carousel-control img {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
 }

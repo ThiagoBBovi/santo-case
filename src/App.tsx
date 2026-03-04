@@ -16,6 +16,7 @@ import instagramFooterIcon from "./assets/icons/instagram-footer.svg";
 import facebookFooterIcon from "./assets/icons/facebook-footer.svg";
 import whatsappFooterIcon from "./assets/icons/whatsapp-footer.svg";
 import heroImage from "./assets/images/image-hero.webp";
+import productTestImage from "./assets/images/imagem-teste.jpeg";
 
 const products = [
   {
@@ -48,6 +49,9 @@ const products = [
 
 const whatsappLink =
   "https://wa.me/5554999574767?text=Olá!%20Vim%20pelo%20site%20da%20Santo%20Case%20e%20quero%20mais%20informações.";
+
+const businessName =
+  "Assistência Técnica e Acessórios Celulares - Santo Case Caxias";
 
 const storeInfo = {
   phoneDisplay: "(54) 99957-4767",
@@ -180,12 +184,12 @@ function App() {
           <a
             className="brand"
             href="#inicio"
-            aria-label="Santo Case - Página inicial"
+            aria-label={`${businessName} - Página inicial`}
           >
             <img
               className="brand-logo"
               src={santoCaseLogo}
-              alt="Logo da Santo Case"
+              alt={`Logo da ${businessName}`}
               width={160}
               height={48}
             />
@@ -285,7 +289,7 @@ function App() {
               onMouseLeave={() => setIsPaused(false)}
             >
               <button
-                className="carousel-control"
+                className="carousel-control carousel-control--prev"
                 onClick={prevProduct}
                 aria-label="Produto anterior"
               >
@@ -293,14 +297,24 @@ function App() {
               </button>
 
               <article className="product-card" key={products[current].name}>
-                <span className="product-tag">{products[current].tag}</span>
-                <h3>{products[current].name}</h3>
-                <p>{products[current].description}</p>
-                <div className="product-placeholder">Imagem do produto</div>
+                <div className="product-content">
+                  <span className="product-tag">{products[current].tag}</span>
+                  <h3>{products[current].name}</h3>
+                  <p>{products[current].description}</p>
+                </div>
+                <div className="product-placeholder">
+                  <img
+                    src={productTestImage}
+                    alt={`Imagem de ${products[current].name}`}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                  />
+                </div>
               </article>
 
               <button
-                className="carousel-control"
+                className="carousel-control carousel-control--next"
                 onClick={nextProduct}
                 aria-label="Próximo produto"
               >
@@ -412,7 +426,7 @@ function App() {
             </a>
           </div>
           <p>
-            © {new Date().getFullYear()} Santo Case. Todos os direitos
+            © {new Date().getFullYear()} {businessName}. Todos os direitos
             reservados.
           </p>
         </div>
