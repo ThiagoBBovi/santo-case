@@ -203,6 +203,9 @@ function App() {
             <a href="#inicio" onClick={closeMenu}>
               Início
             </a>
+            <a href="#servicos" onClick={closeMenu}>
+              Serviços
+            </a>
             <a href="#produtos" onClick={closeMenu}>
               Produtos
             </a>
@@ -244,12 +247,12 @@ function App() {
         <section className="hero" id="inicio">
           <div className="container hero-grid">
             <div className="hero-text">
-              <h1>Acessórios e tecnologia para seu dia a dia</h1>
+              <h1>Assistência técnica e acessórios para celulares em Caxias do Sul</h1>
               <p>
-                Capinhas, películas, carregadores, áudio e utilidades com
-                variedade para diferentes modelos em Caxias do Sul. Também
-                oferecemos assistência técnica com atendimento rápido e foco em
-                qualidade.
+                Especialistas em iPhone, Samsung, Motorola e Xiaomi, com troca
+                de tela, bateria, conector de carga e outros reparos com
+                garantia. Também temos películas, capas, carregadores, fones e
+                outros acessórios para o seu dia a dia.
               </p>
               <a
                 className="cta-button"
@@ -263,12 +266,62 @@ function App() {
             <div className="hero-image">
               <img
                 src={heroImage}
-                alt="Imagem da Santo Case com acessórios e tecnologia"
+                alt="Assistência técnica e acessórios na Santo Case em Caxias do Sul"
                 width={900}
                 height={600}
                 loading="eager"
                 fetchPriority="high"
               />
+            </div>
+          </div>
+        </section>
+
+        <section className="services section" id="servicos">
+          <div className="container">
+            <h2>Assistência Técnica</h2>
+            <p className="section-description">
+              Diagnóstico rápido, peças de qualidade e atendimento direto em
+              Caxias do Sul.
+            </p>
+
+            <div className="services-grid">
+              <div className="video-wrapper">
+                {/* Quando o vídeo estiver pronto, substitua o .video-placeholder abaixo.
+                    Opção 1 — MP4 local (coloque o arquivo em /public):
+                    <video controls poster="/video-poster.webp" preload="none">
+                      <source src="/assistencia-tecnica.mp4" type="video/mp4" />
+                    </video>
+                    Opção 2 — YouTube embed (troque SEU_VIDEO_ID):
+                    <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+                      title="Assistência técnica Santo Case"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen />
+                */}
+                <div className="video-placeholder">
+                  <div className="video-play-btn" aria-hidden="true" />
+                  <p>Vídeo em breve</p>
+                  <span>Assistência técnica em ação</span>
+                </div>
+              </div>
+
+              <div className="services-details">
+                <ul className="services-list">
+                  <li>Troca de tela</li>
+                  <li>Troca de bateria</li>
+                  <li>Reparo de conector de carga</li>
+                  <li>Reparo de placa</li>
+                  <li>Desoxidação</li>
+                  <li>Atendimento com garantia</li>
+                </ul>
+                <a
+                  className="cta-button"
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Solicitar assistência
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -338,16 +391,16 @@ function App() {
             <div>
               <h2>Sobre a Santo Case</h2>
               <p>
-                A Santo Case é uma loja focada em acessórios e tecnologia, com
-                opções que unem proteção, funcionalidade e estilo. Além disso,
-                também oferece assistência técnica como um dos serviços da loja,
-                com atendimento próximo e prático em Caxias do Sul.
+                A Santo Case é especializada em assistência técnica e acessórios
+                para celulares em Caxias do Sul. Atendemos com rapidez,
+                utilizamos peças de qualidade e mantemos um relacionamento
+                próximo com cada cliente.
               </p>
             </div>
             <ul>
+              <li>Assistência técnica especializada</li>
               <li>Atendimento direto e rápido</li>
               <li>Grande variedade de acessórios e tecnologia</li>
-              <li>Assistência técnica especializada</li>
               <li>Opções para vários modelos de celular</li>
             </ul>
           </div>
