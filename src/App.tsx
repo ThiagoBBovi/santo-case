@@ -93,6 +93,28 @@ const storeInfo = {
     "https://www.google.com/maps?q=Rua%20Luiz%20Michielon%2C%202201%20-%20sala%20101%20-%20Nossa%20Sra.%20de%20Lourdes%2C%20Caxias%20do%20Sul%20-%20RS%2C%2095074-001&output=embed",
 };
 
+const reviews = [
+  {
+    text: "Atendimento muito bom, deu bastante atenção pro meu problema e resolveu. Recomendo!",
+    author: "Tarcisio K Savariz",
+  },
+  {
+    text: "Atendimento ótimo, muito prestativos. Boa variedade de produtos. Super recomendo.",
+    author: "Maira Tonetta",
+  },
+  {
+    text: "Ótimo atendimento, produtos e serviços de alto padrão, indico e recomendo!",
+    author: "Thiago Felipe Osmainchi",
+  },
+  {
+    text: "Lugar excepcional, ótimo atendimento e ótimos serviços.",
+    author: "Igor Roveda",
+  },
+];
+
+const googleReviewsLink =
+  "https://www.google.com/search?q=santo+case&oq=santo+case&gs_lcrp=EgRlZGdlKgkIABBFGDsYgAQyCQgAEEUYOxiABDIKCAEQABixAxiABDIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg90gEIMTI1NWowajGoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x951c1fa23afdb7b3:0x94c12daf8775d6c,1,,,,";
+
 function App() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -205,6 +227,9 @@ function App() {
             </a>
             <a href="#servicos" onClick={closeMenu}>
               Serviços
+            </a>
+            <a href="#avaliacoes" onClick={closeMenu}>
+              Avaliações
             </a>
             <a href="#produtos" onClick={closeMenu}>
               Produtos
@@ -323,6 +348,37 @@ function App() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="reviews section" id="avaliacoes">
+          <div className="container">
+            <h2>Avaliações de clientes</h2>
+            <p className="section-description">
+              O que nossos clientes de Caxias do Sul falam sobre a assistência
+              técnica e o atendimento da Santo Case.
+            </p>
+
+            <div className="reviews-grid">
+              {reviews.map((review) => (
+                <article key={review.author} className="review-card">
+                  <p className="review-stars" aria-label="Avaliação cinco estrelas">
+                    ★★★★★
+                  </p>
+                  <p className="review-text">“{review.text}”</p>
+                  <p className="review-author">— {review.author}</p>
+                </article>
+              ))}
+            </div>
+
+            <a
+              className="cta-button reviews-cta"
+              href={googleReviewsLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver mais avaliações no Google
+            </a>
           </div>
         </section>
 
