@@ -90,7 +90,7 @@ const storeInfo = {
     },
   ],
   mapSrc:
-    "https://www.google.com/maps?q=Rua%20Luiz%20Michielon%2C%202201%20-%20sala%20101%20-%20Nossa%20Sra.%20de%20Lourdes%2C%20Caxias%20do%20Sul%20-%20RS%2C%2095074-001&output=embed",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.815533308293!2d-51.160484399999994!3d-29.1701077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c1fa23afdb7b3%3A0x94c12daf8775d6c!2sAssist%C3%AAncia%20T%C3%A9cnica%20e%20Acess%C3%B3rios%20Celulares%20-%20Santo%20Case%20Caxias!5e0!3m2!1spt-BR!2sbr!4v1773412549726!5m2!1spt-BR!2sbr",
 };
 
 const reviews = [
@@ -114,6 +114,9 @@ const reviews = [
 
 const googleReviewsLink =
   "https://www.google.com/search?q=santo+case&oq=santo+case&gs_lcrp=EgRlZGdlKgkIABBFGDsYgAQyCQgAEEUYOxiABDIKCAEQABixAxiABDIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg90gEIMTI1NWowajGoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x951c1fa23afdb7b3:0x94c12daf8775d6c,1,,,,";
+
+const googleRateUsLink =
+  "https://www.google.com/search?q=santo+case&oq=santo+case&gs_lcrp=EgRlZGdlKgkIABBFGDsYgAQyCQgAEEUYOxiABDIKCAEQABixAxiABDIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg90gEIMTI1NWowajGoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x951c1fa23afdb7b3:0x94c12daf8775d6c,3,,,,";
 
 function App() {
   const [current, setCurrent] = useState(0);
@@ -317,6 +320,7 @@ function App() {
                   controls
                   preload="metadata"
                   playsInline
+                  poster="/logo-poster.svg"
                   aria-label="Vídeo de assistência técnica da Santo Case"
                 >
                   <source src="/assistencia_tecnica.webm" type="video/webm" />
@@ -369,14 +373,24 @@ function App() {
               ))}
             </div>
 
-            <a
-              className="cta-button reviews-cta"
-              href={googleReviewsLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Ver mais avaliações no Google
-            </a>
+            <div className="reviews-wrapper">
+              <a
+                className="cta-button reviews-cta"
+                href={googleRateUsLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Avaliar
+              </a>
+              <a
+                className="cta-button reviews-cta"
+                href={googleReviewsLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver mais avaliações no Google
+              </a>
+            </div>
           </div>
         </section>
 
