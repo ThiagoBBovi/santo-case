@@ -272,7 +272,9 @@ function App() {
         <section className="hero" id="inicio">
           <div className="container hero-grid">
             <div className="hero-text">
-              <h1>Assistência técnica e acessórios para celulares em Caxias do Sul</h1>
+              <h1>
+                Assistência técnica e acessórios para celulares em Caxias do Sul
+              </h1>
               <p>
                 Especialistas em iPhone, Samsung, Motorola e Xiaomi, com troca
                 de tela, bateria, conector de carga e outros reparos com
@@ -311,22 +313,15 @@ function App() {
 
             <div className="services-grid">
               <div className="video-wrapper">
-                {/* Quando o vídeo estiver pronto, substitua o .video-placeholder abaixo.
-                    Opção 1 — MP4 local (coloque o arquivo em /public):
-                    <video controls poster="/video-poster.webp" preload="none">
-                      <source src="/assistencia-tecnica.mp4" type="video/mp4" />
-                    </video>
-                    Opção 2 — YouTube embed (troque SEU_VIDEO_ID):
-                    <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID"
-                      title="Assistência técnica Santo Case"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen />
-                */}
-                <div className="video-placeholder">
-                  <div className="video-play-btn" aria-hidden="true" />
-                  <p>Vídeo em breve</p>
-                  <span>Assistência técnica em ação</span>
-                </div>
+                <video
+                  controls
+                  preload="metadata"
+                  playsInline
+                  aria-label="Vídeo de assistência técnica da Santo Case"
+                >
+                  <source src="/assistencia_tecnica.webm" type="video/webm" />
+                  Seu navegador não suporta vídeo em HTML5.
+                </video>
               </div>
 
               <div className="services-details">
@@ -362,7 +357,10 @@ function App() {
             <div className="reviews-grid">
               {reviews.map((review) => (
                 <article key={review.author} className="review-card">
-                  <p className="review-stars" aria-label="Avaliação cinco estrelas">
+                  <p
+                    className="review-stars"
+                    aria-label="Avaliação cinco estrelas"
+                  >
                     ★★★★★
                   </p>
                   <p className="review-text">“{review.text}”</p>
