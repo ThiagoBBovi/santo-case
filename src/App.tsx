@@ -118,6 +118,75 @@ const googleReviewsLink =
 const googleRateUsLink =
   "https://www.google.com/search?q=santo+case&oq=santo+case&gs_lcrp=EgRlZGdlKgkIABBFGDsYgAQyCQgAEEUYOxiABDIKCAEQABixAxiABDIGCAIQRRg7MgcIAxAAGIAEMgcIBBAAGIAEMgcIBRAAGIAEMgYIBhBFGDwyBggHEEUYPDIGCAgQRRg90gEIMTI1NWowajGoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x951c1fa23afdb7b3:0x94c12daf8775d6c,3,,,,";
 
+const contelSiteLink = "https://conteltelecom.com.br/";
+
+const activatePlanWhatsappLink =
+  "https://wa.me/5554999574767?text=" +
+  encodeURIComponent(
+    "Olá! Quero ativar um plano da Contel Telecom na Santo Case.",
+  );
+
+const phonePlans = [
+  {
+    name: "Contel Start",
+    gb: "11GB",
+    detail: "6GB Plano + 5GB Portabilidade",
+    price: "R$ 39,90",
+    tone: "start",
+    badges: [
+      { label: "Fale ilimitado", variant: "primary" },
+      { label: "WhatsApp ilimitado", variant: "secondary" },
+    ],
+  },
+  {
+    name: "Contel Flexi",
+    gb: "15GB",
+    detail: "10GB Plano + 5GB Portabilidade",
+    price: "R$ 44,90",
+    tone: "flexi",
+    badges: [
+      { label: "Fale ilimitado", variant: "primary" },
+      { label: "WhatsApp ilimitado", variant: "secondary" },
+    ],
+  },
+  {
+    name: "Contel Mega",
+    gb: "20GB",
+    detail: "15GB Plano + 5GB Portabilidade",
+    price: "R$ 54,90",
+    tone: "mega",
+    badges: [
+      { label: "Fale ilimitado", variant: "primary" },
+      { label: "WhatsApp ilimitado", variant: "secondary" },
+      { label: "Waze ilimitado", variant: "secondary" },
+    ],
+  },
+  {
+    name: "Contel Ultra",
+    gb: "28GB",
+    detail: "23GB Plano + 5GB Portabilidade",
+    price: "R$ 64,90",
+    tone: "ultra",
+    badges: [
+      { label: "Fale ilimitado", variant: "primary" },
+      { label: "WhatsApp ilimitado", variant: "secondary" },
+      { label: "Waze ilimitado", variant: "secondary" },
+    ],
+  },
+  {
+    name: "Contel Tour",
+    gb: "50GB",
+    detail: "45GB Plano + 5GB Portabilidade",
+    price: "R$ 84,90",
+    tone: "tour",
+    badges: [
+      { label: "Fale ilimitado", variant: "primary" },
+      { label: "WhatsApp ilimitado", variant: "secondary" },
+      { label: "Waze ilimitado", variant: "secondary" },
+    ],
+  },
+];
+
 function App() {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -231,11 +300,14 @@ function App() {
             <a href="#servicos" onClick={closeMenu}>
               Serviços
             </a>
+            <a href="#produtos" onClick={closeMenu}>
+              Produtos
+            </a>
             <a href="#avaliacoes" onClick={closeMenu}>
               Avaliações
             </a>
-            <a href="#produtos" onClick={closeMenu}>
-              Produtos
+            <a href="#planos" onClick={closeMenu}>
+              Planos
             </a>
             <a href="#sobre" onClick={closeMenu}>
               Sobre
@@ -350,50 +422,6 @@ function App() {
           </div>
         </section>
 
-        <section className="reviews section" id="avaliacoes">
-          <div className="container">
-            <h2>Avaliações de clientes</h2>
-            <p className="section-description">
-              O que nossos clientes de Caxias do Sul falam sobre a assistência
-              técnica e o atendimento da Santo Case.
-            </p>
-
-            <div className="reviews-grid">
-              {reviews.map((review) => (
-                <article key={review.author} className="review-card">
-                  <p
-                    className="review-stars"
-                    aria-label="Avaliação cinco estrelas"
-                  >
-                    ★★★★★
-                  </p>
-                  <p className="review-text">“{review.text}”</p>
-                  <p className="review-author">— {review.author}</p>
-                </article>
-              ))}
-            </div>
-
-            <div className="reviews-wrapper">
-              <a
-                className="cta-button reviews-cta"
-                href={googleRateUsLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Avaliar
-              </a>
-              <a
-                className="cta-button reviews-cta"
-                href={googleReviewsLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver mais avaliações no Google
-              </a>
-            </div>
-          </div>
-        </section>
-
         <section className="products section" id="produtos">
           <div className="container">
             <h2>Acessórios e tecnologia</h2>
@@ -451,6 +479,119 @@ function App() {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="reviews section" id="avaliacoes">
+          <div className="container">
+            <h2>Avaliações de clientes</h2>
+            <p className="section-description">
+              O que nossos clientes de Caxias do Sul falam sobre a assistência
+              técnica e o atendimento da Santo Case.
+            </p>
+
+            <div className="reviews-grid">
+              {reviews.map((review) => (
+                <article key={review.author} className="review-card">
+                  <p
+                    className="review-stars"
+                    aria-label="Avaliação cinco estrelas"
+                  >
+                    ★★★★★
+                  </p>
+                  <p className="review-text">“{review.text}”</p>
+                  <p className="review-author">— {review.author}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="reviews-wrapper">
+              <a
+                className="cta-button reviews-cta"
+                href={googleRateUsLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Avaliar
+              </a>
+              <a
+                className="cta-button reviews-cta"
+                href={googleReviewsLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver mais avaliações no Google
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="plans section" id="planos">
+          <div className="container">
+            <h2>Planos de Celular Contel Telecom</h2>
+            <p className="section-description">
+              Ative seu plano conosco na loja, com atendimento presencial em
+              Caxias do Sul e suporte para escolher a melhor opção para o seu
+              perfil de uso.
+            </p>
+
+            <div className="plans-grid" aria-label="Lista de planos de celular">
+              {phonePlans.map((plan) => (
+                <article
+                  key={plan.name}
+                  className={`plan-card plan-card--${plan.tone}`}
+                >
+                  <p className="plan-name">{plan.name}</p>
+                  <p className="plan-gb">até {plan.gb}</p>
+                  <p className="plan-detail">{plan.detail}</p>
+                  <div className="plan-badges" aria-label="Recursos do plano">
+                    {plan.badges.map((badge) => (
+                      <span
+                        key={badge.label}
+                        className={`plan-badge plan-badge--${badge.variant}`}
+                      >
+                        {badge.label}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="plan-price">{plan.price}</p>
+                  <a
+                    className="plan-cta"
+                    href={`https://wa.me/5554999574767?text=${encodeURIComponent(
+                      `Olá! Quero ativar o plano ${plan.name} na Santo Case.`,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Quero este plano
+                  </a>
+                </article>
+              ))}
+            </div>
+
+            <div className="plans-actions">
+              <a
+                className="cta-button"
+                href={activatePlanWhatsappLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ative seu plano no WhatsApp
+              </a>
+              <a
+                className="plans-link"
+                href={contelSiteLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver site oficial da Contel Telecom
+              </a>
+            </div>
+
+            <p className="plans-note">
+              Valores e condições podem ser alterados sem aviso prévio. Consulte
+              disponibilidade no WhatsApp da loja.
+            </p>
           </div>
         </section>
 
