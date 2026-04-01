@@ -297,6 +297,9 @@ function App() {
             <a href="#inicio" onClick={closeMenu}>
               Início
             </a>
+            <a href="#planos" onClick={closeMenu}>
+              Planos
+            </a>
             <a href="#servicos" onClick={closeMenu}>
               Serviços
             </a>
@@ -305,9 +308,6 @@ function App() {
             </a>
             <a href="#avaliacoes" onClick={closeMenu}>
               Avaliações
-            </a>
-            <a href="#planos" onClick={closeMenu}>
-              Planos
             </a>
             <a href="#sobre" onClick={closeMenu}>
               Sobre
@@ -375,6 +375,75 @@ function App() {
                 fetchPriority="high"
               />
             </div>
+          </div>
+        </section>
+
+        <section className="plans section" id="planos">
+          <div className="container">
+            <h2>Planos de Celular Contel Telecom</h2>
+            <p className="section-description">
+              Ative seu plano conosco na loja, com atendimento presencial em
+              Caxias do Sul e suporte para escolher a melhor opção para o seu
+              perfil de uso.
+            </p>
+
+            <div className="plans-grid" aria-label="Lista de planos de celular">
+              {phonePlans.map((plan) => (
+                <article
+                  key={plan.name}
+                  className={`plan-card plan-card--${plan.tone}`}
+                >
+                  <p className="plan-name">{plan.name}</p>
+                  <p className="plan-gb">até {plan.gb}</p>
+                  <p className="plan-detail">{plan.detail}</p>
+                  <div className="plan-badges" aria-label="Recursos do plano">
+                    {plan.badges.map((badge) => (
+                      <span
+                        key={badge.label}
+                        className={`plan-badge plan-badge--${badge.variant}`}
+                      >
+                        {badge.label}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="plan-price">{plan.price}</p>
+                  <a
+                    className="plan-cta"
+                    href={`https://wa.me/5554999574767?text=${encodeURIComponent(
+                      `Olá! Quero ativar o plano ${plan.name} na Santo Case.`,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Quero este plano
+                  </a>
+                </article>
+              ))}
+            </div>
+
+            <div className="plans-actions">
+              <a
+                className="cta-button"
+                href={activatePlanWhatsappLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ative seu plano no WhatsApp
+              </a>
+              <a
+                className="plans-link"
+                href={contelSiteLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver site oficial da Contel Telecom
+              </a>
+            </div>
+
+            <p className="plans-note">
+              Valores e condições podem ser alterados sem aviso prévio. Consulte
+              disponibilidade no WhatsApp da loja.
+            </p>
           </div>
         </section>
 
@@ -523,75 +592,6 @@ function App() {
                 Ver mais avaliações no Google
               </a>
             </div>
-          </div>
-        </section>
-
-        <section className="plans section" id="planos">
-          <div className="container">
-            <h2>Planos de Celular Contel Telecom</h2>
-            <p className="section-description">
-              Ative seu plano conosco na loja, com atendimento presencial em
-              Caxias do Sul e suporte para escolher a melhor opção para o seu
-              perfil de uso.
-            </p>
-
-            <div className="plans-grid" aria-label="Lista de planos de celular">
-              {phonePlans.map((plan) => (
-                <article
-                  key={plan.name}
-                  className={`plan-card plan-card--${plan.tone}`}
-                >
-                  <p className="plan-name">{plan.name}</p>
-                  <p className="plan-gb">até {plan.gb}</p>
-                  <p className="plan-detail">{plan.detail}</p>
-                  <div className="plan-badges" aria-label="Recursos do plano">
-                    {plan.badges.map((badge) => (
-                      <span
-                        key={badge.label}
-                        className={`plan-badge plan-badge--${badge.variant}`}
-                      >
-                        {badge.label}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="plan-price">{plan.price}</p>
-                  <a
-                    className="plan-cta"
-                    href={`https://wa.me/5554999574767?text=${encodeURIComponent(
-                      `Olá! Quero ativar o plano ${plan.name} na Santo Case.`,
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Quero este plano
-                  </a>
-                </article>
-              ))}
-            </div>
-
-            <div className="plans-actions">
-              <a
-                className="cta-button"
-                href={activatePlanWhatsappLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ative seu plano no WhatsApp
-              </a>
-              <a
-                className="plans-link"
-                href={contelSiteLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Ver site oficial da Contel Telecom
-              </a>
-            </div>
-
-            <p className="plans-note">
-              Valores e condições podem ser alterados sem aviso prévio. Consulte
-              disponibilidade no WhatsApp da loja.
-            </p>
           </div>
         </section>
 
