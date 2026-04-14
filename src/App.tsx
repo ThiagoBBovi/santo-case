@@ -16,34 +16,25 @@ import instagramFooterIcon from "./assets/icons/instagram-footer.svg";
 import facebookFooterIcon from "./assets/icons/facebook-footer.svg";
 import whatsappFooterIcon from "./assets/icons/whatsapp-footer.svg";
 import heroImage from "./assets/images/image-hero.webp";
-import productTestImage from "./assets/images/imagem-teste.jpeg";
 
 const products = [
   {
     name: "Capinhas Premium",
-    description: "Modelos para proteção e estilo no dia a dia.",
+    description: "Capinhas para proteção e estilo no dia a dia.",
     tag: "Mais procuradas",
+    image: "/capinhas.webp",
   },
   {
-    name: "Películas de Vidro",
-    description: "Proteção para tela com ótima transparência.",
-    tag: "Proteção",
-  },
-  {
-    name: "Carregadores e Cabos",
-    description: "Acessórios de energia para vários modelos.",
-    tag: "Acessórios",
-  },
-  {
-    name: "Fones e Áudio Bluetooth",
-    description: "Fones, caixas de som e opções sem fio para sua rotina.",
+    name: "Headphones Bluetooth",
+    description: "Headphones sem fio com conforto e qualidade de som.",
     tag: "Tecnologia",
+    image: "/headphones.webp",
   },
   {
-    name: "Smartwatches e Gadgets",
-    description:
-      "Relógios inteligentes e itens de tecnologia para o dia a dia.",
+    name: "Smartwatches",
+    description: "Relógios inteligentes para acompanhar sua rotina.",
     tag: "Novidades",
+    image: "/smartwatches.webp",
   },
 ];
 
@@ -522,7 +513,7 @@ function App() {
                 </div>
                 <div className="product-placeholder">
                   <img
-                    src={productTestImage}
+                    src={products[current].image}
                     alt={`Imagem de ${products[current].name}`}
                     width={800}
                     height={800}
